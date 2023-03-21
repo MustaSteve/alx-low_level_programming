@@ -1,13 +1,23 @@
+#include <stdio.h>
 #include "main.h"
 /**
- * print_last_digit - prints the last digit of a number.
- * @n: digit to find the last place of.
- * Return: The last digit.
- */
+* print_last_digit - outputs the absolute value of an integer
+* @n: number to check
+* Return: value of the last digit
+*/
 int print_last_digit(int n)
 {
-	if (n < 0)
-		n = n * -1;
-	_putchar((n % 10) + '0');
-	return (n % 10);
+int r;
+
+if (n < 0)
+{
+n = -n;
+}
+r = n % 10;
+if (r < 0)
+{
+r = -r;
+}
+_putchar(r + '0');
+return (r);
 }
