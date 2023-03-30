@@ -1,34 +1,34 @@
 #include "main.h"
 /**
- * cap_string - do thing
- * @str: string
- * Return: string
+ * cap_string - capitalize all words of string
+ * Return: void
+ * @s: string
  */
-char *cap_string(char *str)
+char *cap_string(char *s)
 {
-	int i = 0;
-	int cap_next = 1; /* capitalize next character */
+	int i = 0, j = 0;
 
-		while (str[i] != '\0')
+	char seps[] = {32, 10, 9, 44, 59, 46, 33, 63, 34, 40, 41, 123, 125};
+
+	int size = sizeof(seps) / sizeof(seps[0]);
+
+	while (s[i] != 0)
 	{
-		if (cap_next && isalpha(str[i]))
+		char c = s[i];
+
+		for (j = 0; j < size; j++)
 		{
-			str[i] = toupper(str[i]);
-			cap_next = 0;
-		}
-		else if (str[i] == ' ' || str[i] == '\t' || str[i] == '\n' ||
-		 str[i] == ',' || str[i] == ';' || str[i] == '.' ||
-		 str[i] == '!' || str[i] == '?' || str[i] == '"' ||
-		 str[i] == '(' || str[i] == ')' || str[i] == '{' ||
-		 str[i] == '}')
-		{
-			cap_next = 1;
-		}
-		else
-		{
-			cap_next = 0;
+			if (c == seps[j] && s[i + 1] >= 'a' && s[i + 1] <= 'z')
+			{
+				s[i + 1] = 'A' + (s[i + 1] - 'a');
+				break;
+			}
 		}
 		i++;
 	}
-	return (str);
+
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] = 'A' + (s[0] - 'a');
+
+	return (s);
 }
