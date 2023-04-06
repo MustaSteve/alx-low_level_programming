@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * checkpr - checks if n is a prime number
+ * check_pr - checks if n is a prime number
  * @n: int
  * @xx: int
  *
