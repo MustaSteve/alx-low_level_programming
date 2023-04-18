@@ -1,9 +1,9 @@
+#ifndef DOG_H
+#define DOG_H
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include <stddef.h>
-#ifndef DOG_H
-#define DOG_H
 
 /**
 * struct dog  check the code
@@ -17,7 +17,7 @@ char *name;
 float age;
 char *owner;
 };
-
+/* Another functions */
 void init_dog(struct dog *d, char *name, float age, char *owner);
 void print_dog(struct dog *d);
 
