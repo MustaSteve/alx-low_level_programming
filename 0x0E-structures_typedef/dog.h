@@ -6,7 +6,7 @@
 #include <stddef.h>
 
 /**
-* struct dog  check the code
+* struct dog - check the code
 * @name: dog name
 * @age: dog age
 * @owner: dog owner
