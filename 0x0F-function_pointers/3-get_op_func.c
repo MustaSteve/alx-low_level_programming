@@ -18,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (strcmp(s, ops[i].op) == NULL)
+		if (ops[i].op != NULL || *(ops[i].op) != *s)
 			
 	i++;
 	}

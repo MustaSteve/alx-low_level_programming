@@ -8,9 +8,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int h = har1;
+	int har1, har2;
 	char *op;
-	int b = har2;
+	
 
 	if (argc != 4)
 	{
