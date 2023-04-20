@@ -1,19 +1,15 @@
 #include "3-calc.h"
+
+int op_add(int a, int b);
+int op_sub(int a, int b);
+int op_mul(int a, int b);
+int op_div(int a, int b);
+int op_mod(int a, int b);
+
 /**
- * op_mul - mul two numbers
- * @a: 1 number
- * @b: 2 number
- *
- * Return: sum  a & b
- */
-int op_mul(int a, int b)
-{
-	return (a * b);
-}
-/**
- * op_add - add 2 number
- * @a: 1 num
- * @b: 2 num
+ * op_add - add two num
+ * @a: first number
+ * @b: second number
  *
  * Return: sum a & b
  */
@@ -22,9 +18,9 @@ int op_add(int a, int b)
 	return (a + b);
 }
 /**
- * op_sub - sub 2 num
- * @a: 1 num
- * @b: 2 num
+ * op_sub - sub two num
+ * @a: first number
+ * @b: second number
  *
  * Return: sum a & b
  */
@@ -33,22 +29,33 @@ int op_sub(int a, int b)
 	return (a - b);
 }
 /**
- * op_div - Return 2 num
- * @a: 1 num
- * @b: 2 num
+ * op_mul - mul two num
+ * @a: first number
+ * @b: second number
  *
- * Return: sum  a & b
+ * Return: sum a & b
+ */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+/**
+ * op_div - div two num
+ * @a: first number.
+ * @b: second number.
+ *
+ * Return: The quotient of a and b.
  */
 int op_div(int a, int b)
 {
 	return (a / b);
 }
 /**
- * op_mod - Return 2 num
- * @a: 1 num
- * @b: 2 num
+ * op_mod - remaind two numbers
+ * @a: first number.
+ * @b: second number.
  *
- * Return: sum  a & b
+ * Return: sum a & b
  */
 int op_mod(int a, int b)
 {
