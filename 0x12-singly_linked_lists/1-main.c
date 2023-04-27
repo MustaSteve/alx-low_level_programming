@@ -22,13 +22,13 @@ int main(void)
         printf("Error\n");
         return (1);
     }
-    new->sr = strdup("Hello");
+    new->str = strdup("Hello");
     new->len = 5;
     new->next = head;
     head = new;
     n = list_len(head);
     printf("-> %lu elements\n", n);
-    free(new->sr);
+    free(new->str);
     free(new);
     return (0);
 }

@@ -22,7 +22,7 @@ int main(void)
         printf("Error\n");
         return (1);
     }
-    new->sr = strdup("Hello");
+    new->str = strdup("Hello");
     new->len = 5;
     new->next = head;
     head = new;
@@ -30,8 +30,8 @@ int main(void)
     printf("-> %lu elements\n", n);
 
     printf("\n");
-    free(new->sr);
-    new->sr = NULL;
+    free(new->str);
+    new->str = NULL;
     n = print_list(head);
     printf("-> %lu elements\n", n);
 
