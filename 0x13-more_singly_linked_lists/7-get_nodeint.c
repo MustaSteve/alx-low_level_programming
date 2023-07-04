@@ -7,7 +7,8 @@
  * get_nodeint_at_index - returns the node
  * @head: first
  * @index: the index of the node
- * Return: nth node 
+ *
+ * Return: pointer to the node we looking for, or NULL
  */
 listint_t *get_nodeint_at_index(listint_t *head, unsigned int index)
 {
