@@ -4,17 +4,19 @@
 #include "lists.h"
 
 /**
- * free_listint - frees a linked list
- * @head: listint_t list to be freed
+ * free_listint - a list
+ * @head: 1rst
+ * Return: void
  */
+
 void free_listint(listint_t *head)
 {
 	listint_t *nue;
 
-	while (head)
+	while (head != NULL)
 	{
-		nue = head->next;
-		head = nue;
-		free(head);
+		nue = head;
+		head = head->next;
+		free(nue);
 	}
 }
