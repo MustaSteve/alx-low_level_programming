@@ -2,7 +2,6 @@
 #include <fcntl.h>
 #include <stdlib.h>
 #include "main.h"
-#define MAX_LENe 1024
 #include <unistd.h>
 
 /**
@@ -14,7 +13,7 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	char *buf;
+	char *suf;
 	ssize_t nd;
 	ssize_t s;
 	ssize_t v;
@@ -22,11 +21,11 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	nd = open(filename, O_RDONLY);
 	if (nd == -1)
 		return (0);
-	buf = malloc(sizeof(char) * letters);
-	s = read(nd, buf, letters);
-	v = write(STDOUT_FILENO, buf, s);
+	suf = malloc(sizeof(char) * letters);
+	s = read(nd, suf, letters);
+	v = write(STDOUT_FILENO, suf, s);
 
-	free(buf);
+	free(suf);
 	close(nd);
 	return (v);
 }
