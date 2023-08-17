@@ -2,9 +2,9 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * create_dnode - create a new node
+ * create_dnode - creats new node
  * @n: data of node
- * @prev: link to previous node
+ * @prev: link to prev node
  * @next: link to next node
  * Return: pointer to new node
  */
@@ -21,7 +21,7 @@ dlistint_t *create_dnode(int n, dlistint_t *prev, dlistint_t *next)
 	return (new_i);
 }
 /**
- * insert_dnodeint_at_index - inserts a new node at a position
+ * insert_dnodeint_at_index - inserts a new node at a given position
  * @h: head of doubly-linked list
  * @idx: index for insertion of new node
  * @n: data for new node
@@ -29,8 +29,8 @@ dlistint_t *create_dnode(int n, dlistint_t *prev, dlistint_t *next)
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *current_i = *h, *localPrev = NULL;
-	unsigned int count_i = 0;
+	dlistint_t *cr_i = *h, *localPrev = NULL;
+	unsigned int icont = 0;
 
 	if (!h)
 		return (NULL);
@@ -45,21 +45,21 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		}
 		return (*h);
 	}
-	for (current_i = *h; current_i && (count_i < idx); current_i = current_i->next, count_i++)
+	for (cr_i = *h; cr_i && (icont < idx); cr_i = cr_i->next, icont++)
 	{
-		localPrev = current_i;
+		localPrev = cr_i;
 	}
-	if ((count_i == idx) && (current_i == NULL)) /*insert at list end*/
+	if ((icont == idx) && (cr_i == NULL)) /*insert at list end*/
 	{
 		localPrev->next = create_dnode(n, localPrev, NULL);
 		return (localPrev->next);
 	}
-	if ((count_i < idx) && (current_i == NULL))/*idx too high*/
+	if ((icont < idx) && (cr_i == NULL))/*idx too high*/
 		return (NULL);
 	if (localPrev != NULL)
 	{       /*insert in middle of list*/
-		localPrev->next = create_dnode(n, localPrev, current_i);
-		current_i->prev = localPrev->next;
+		localPrev->next = create_dnode(n, localPrev, cr_i);
+		cr_i->prev = localPrev->next;
 		return (localPrev->next);
 	}
 	return (NULL); /*should never run*/
